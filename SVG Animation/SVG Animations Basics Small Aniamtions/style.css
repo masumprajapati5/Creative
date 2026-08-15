@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.signature {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: svg-path-animation 1.7s ease-out infinite alternate;
+}
+
+@keyframes svg-path-animation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.second .ball {
+    offset-path: path('M10,120 C120,-20 280,320 390,30');
+    animation: along-path 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes along-path {
+    from {
+        offset-distance: 0%;
+    }
+
+    to {
+        offset-distance: 100%;
+    }
+}
+.figmaball {
+    offset-path: path('M0.0380859 24.2613C0.0380859 24.2613 1735.48 -145.255 2585.54 421.261C3042 725.469 3097.96 1130.47 3547.54 1444.76C4357.3 2010.85 6009.54 2027.26 6009.54 2027.26');
+    animation: figma-path 3s ease-in-out infinite alternate;
+}
+
+@keyframes figma-path {
+    from {
+        offset-distance: 0%;
+    }
+
+    to {
+        offset-distance: 100%;
+    }
+}

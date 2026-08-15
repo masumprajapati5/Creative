@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Sekuya&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+  overflow: hidden;
+}
+
+body {
+  background-color: black;
+}
+
+.loader {
+  height: 100vh;
+  width: 100%;
+  background-color: #010101;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-count h2 {
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  background-color: cadetblue;
+}
+
+.hero-bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.hero-bg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7rem;
+  color: whitesmoke;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-content button {
+  outline: none;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  z-index: 5;
+  transition: all 0.5 cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
+}
+button:hover{
+  color: black;
+  background-color: whitesmoke;
+}
+
+.heading,
+.sub-heading {
+  z-index: 5;
+  overflow: hidden;
+}
+
+.hero-content .heading h1 {
+  font-size: 5rem;
+}
+
+.hero-content .sub-heading p {
+  width: 600px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.scroll{
+  margin-top: 15rem;
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scroll p{
+  font-size: 0.7rem;
+  color: whitesmoke;
+}

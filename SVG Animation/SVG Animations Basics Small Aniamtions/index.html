@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <svg width="300" height="140" viewBox="0 0 300 120">
+            <path class="signature" pathLength="1" d="M10,80 C60,10 120,120 180,40 S260,10 290,60" fill="none"
+                stroke="#fff" stroke-width="4" />
+        </svg>
+    </div>
+
+    <div class="second">
+        <svg width="400" height="170" viewBox="0 0 400 150">
+            <path id="track" d="M10,120 C120,-20 280,320 390,30" fill="none" stroke="#ddd" stroke-width="2" />
+            <circle class="ball" r="10" fill="#e17055" />
+        </svg>
+    </div>
+
+    <div>
+        <svg class="figma" width="300" height="500" viewBox="0 0 5790 1614" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0.0380859 24.2613C0.0380859 24.2613 1735.48 -145.255 2585.54 421.261C3042 725.469 3097.96 1130.47 3547.54 1444.76C4357.3 2010.85 6009.54 2027.26 6009.54 2027.26"
+                id="track" fill="none" stroke="#ddd" stroke-width="20" />
+            <circle class="figmaball" r="100" fill="#e17055" />
+        </svg>
+
+    </div>
+    <div>
+        <svg width="120" height="120">
+            <circle cx="60" cy="60" r="15" fill="#00b894">
+                <animate attributeName="r" values="15;30;15" dur="2s" repeatCount="indefinite" />
+            </circle>
+        </svg>
+    </div>
+
+    <div>
+        <svg class="wave-text" viewBox="0 0 500 60">
+            <path id="curve" d="M10,40 C130,-10 370,90 490,30" fill="none" />
+            <text font-size="24" fill="#fff">
+                <textPath href="#curve" startOffset="0%">
+                    Keep going you're doing great Keep going you're doing great.
+                    <animate attributeName="startOffset" from="0%" to="-100%" dur="8s" repeatCount="indefinite" />
+                </textPath>
+            </text>
+        </svg>
+    </div>
+</body>
+
+</html>

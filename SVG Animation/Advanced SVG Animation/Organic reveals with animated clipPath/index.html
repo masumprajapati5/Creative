@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced SVG Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <svg width="0" height="0">
+            <defs>
+                <clipPath id="blobClip" clipPathUnits="objectBoundingBox">
+                    <path id="blobPath">
+                        <animate attributeName="d" dur="2s" repeatCount="indefinite" values="
+M0.50,0.02
+C0.72,0.00 0.92,0.12 0.98,0.34
+C1.03,0.56 0.96,0.82 0.78,0.94
+C0.60,1.04 0.34,1.00 0.16,0.88
+C-0.02,0.74 -0.02,0.44 0.08,0.22
+C0.18,0.06 0.34,0.02 0.50,0.02
+Z;
+
+M0.48,0.04
+C0.76,-0.02 0.96,0.18 1.00,0.38
+C1.04,0.62 0.90,0.88 0.72,0.98
+C0.52,1.04 0.28,0.96 0.10,0.84
+C-0.04,0.66 0.00,0.40 0.12,0.18
+C0.24,0.04 0.36,0.00 0.48,0.04
+Z;
+
+M0.52,0.01
+C0.70,0.04 0.94,0.10 0.96,0.40
+C1.00,0.70 0.86,0.94 0.68,0.96
+C0.46,1.02 0.22,0.98 0.06,0.80
+C-0.02,0.58 0.02,0.30 0.18,0.12
+C0.30,0.02 0.42,0.00 0.52,0.01
+Z;
+
+M0.50,0.02
+C0.72,0.00 0.92,0.12 0.98,0.34
+C1.03,0.56 0.96,0.82 0.78,0.94
+C0.60,1.04 0.34,1.00 0.16,0.88
+C-0.02,0.74 -0.02,0.44 0.08,0.22
+C0.18,0.06 0.34,0.02 0.50,0.02
+Z" />
+                    </path>
+                </clipPath>
+            </defs>
+        </svg>
+
+        <img src="https://i.pinimg.com/736x/9a/83/30/9a8330b1c6153e79da6fe9c105c7772d.jpg"
+            style="clip-path: url(#blobClip); width: 350px;" />
+
+    </div>
+</body>
+
+</html>
