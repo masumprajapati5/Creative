@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be the Buzz</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+    <section class="page page1">
+        <div class="overlay"></div>
+
+        <nav class="animate-up">
+            <img src="/bethebuzz-logo-dark.svg" alt="Be the Buzz">
+            <h2>WHERE STRATEGY<br>MEETS SUCCESS</h2>
+            <button class="menu-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000066" stroke-width="2"
+                    stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+        </nav>
+
+        <img src="/hero.png" class="hero animate-up" alt="Hero">
+
+        <div class="bottom animate-up">
+            <span class="scroll-line"></span>
+            <h1 class="services-text">SERVICES</h1>
+        </div>
+    </section>
+
+    <div class="pre-page2">
+        <p>Transform your go-to-market strategy with our end-to-end solutions that bridge marketing, sales, and
+            technology to deliver sustainable growth for B2B SaaS, e-commerce, and cybersecurity companies.</p>
+    </div>
+
+    <section class="page page2">
+        <div class="p2-bg"></div>
+
+        <div class="p2-inner" id="p2Inner">
+
+            <!-- ── Left column ── -->
+            <div class="p2-col" id="p2ColLeft">
+
+                <div class="p2-card" id="cardAccount">
+                    <div class="p2-card-header">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7" rx="1" />
+                            <rect x="14" y="3" width="7" height="7" rx="1" />
+                            <rect x="3" y="14" width="7" height="7" rx="1" />
+                            <path d="M14 17.5h7M17.5 14v7" />
+                        </svg>
+                        <h3>Account-Based<br>Revenue<br>Architecture</h3>
+                    </div>
+                    <div class="p2-card-body">
+                        <p>Move beyond "spray and pray." Execute ABM the way enterprise security buyers actually buy.
+                            Orchestrate targeted accounts, buying-group messaging, and multi-channel execution to create
+                            real engagement, not just noise.</p>
+                        <a class="p2-learn-btn" href="#">LEARN MORE <span>→</span></a>
+                    </div>
+                    <!-- ← THIS is the trigger button (top-left section) -->
+                    <button class="p2-circle-btn" id="btnAccount" aria-label="Expand">+</button>
+                </div>
+
+                <div class="p2-card" id="cardRevops">
+                    <div class="p2-card-header">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <circle cx="12" cy="12" r="7" stroke-dasharray="2 3" />
+                            <circle cx="12" cy="12" r="10.5" />
+                        </svg>
+                        <h3>RevOps &amp; Tech Stack<br>Architecture</h3>
+                    </div>
+                    <div class="p2-card-body">
+                        <p>Work with a technical team that knows the entire ecosystem inside and out—handling complex
+                            CRM implementations (HubSpot/SFDC), attribution models, and tool integrations, and ensuring
+                            it aligns with the GTM strategy. We ensure your internal team inherits a Ferrari, not a
+                            bicycle.</p>
+                        <a class="p2-learn-btn" href="#">LEARN MORE <span>→</span></a>
+                    </div>
+                    <button class="p2-circle-btn" id="btnRevops" aria-label="Expand">+</button>
+                </div>
+
+            </div>
+
+            <!-- ── Right column (starts wide / expanded) ── -->
+            <div class="p2-col p2-col--right" id="p2ColRight">
+
+                <div class="p2-card" id="cardFunnel">
+                    <div class="p2-card-header">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                        </svg>
+                        <h3>Full-Funnel Revenue<br>Ownership</h3>
+                    </div>
+                    <div class="p2-card-body p2-card-body--open">
+                        <p>Get end-to-end ownership of the GTM system. From positioning and campaign execution (ads,
+                            content, and all demand generation channels) to qualification and handoffs, we ensure
+                            pipeline is built, measured, and trusted across marketing and sales.</p>
+                        <a class="p2-learn-btn" href="#">LEARN MORE <span>→</span></a>
+                    </div>
+                    <button class="p2-circle-btn" id="btnFunnel" aria-label="Expand">+</button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+   
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

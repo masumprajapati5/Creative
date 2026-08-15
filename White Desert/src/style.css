@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #010101;
+}
+
+.landing-page,
+.footer-page,
+.animation-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.initial-image {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.initial-image-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.initial-image-content h1 {
+  font-size: 2vw;
+  font-weight: 500;
+  color: floralwhite;
+  scale: 2.2;
+}
+
+.initial-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  clip-path: polygon(18% 19%, 79% 19%, 79% 75%, 19% 75%);
+  will-change: clip-path;
+}
+
+.strip-reveal {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+}
+
+.strips {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.strip {
+  width: calc(100% / 3);
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1786604455260-ddd735ce697b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: 300% 100%;
+  clip-path: inset(0% 0% 0% 100%);
+}
+
+.strip-1 {
+  background-position: 0% 50%;
+}
+
+.strip-2 {
+  background-position: 50% 50%;
+}
+
+.strip-3 {
+  background-position: 100% 50%;
+}
+
+.image-cards-section {
+  height: 100%;
+  width: 200%;
+  position: absolute;
+  top: 0;
+  z-index: 6;
+  transform: translateX(100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card {
+  height: 60%;
+  width: 25%;
+}
+.card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.final-text-reveal {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+.final-text-reveal .imagereveal {
+  height: 100%;
+  width: 100%;
+}
+
+.final-text-reveal .imagereveal img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  clip-path: inset(0% 0% 0% 100%);
+}
+
+.final-text-reveal-content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+}
+
+.final-text-reveal-content h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: floralwhite;
+}
+
+.landing-page,
+.footer-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: floralwhite;
+}
+
+.landing-page h2,
+.footer-page h2{
+  font-size: 2rem;
+  font-weight: 500;
+}
