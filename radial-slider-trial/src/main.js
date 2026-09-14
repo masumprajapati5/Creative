@@ -14,6 +14,7 @@ let rotation = 0;
 let isAnimating = false;
 
 // Put every card around the circle.
+
 items.forEach((item, i) => {
   const angle = i * angleStep - 90;
 
