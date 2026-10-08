@@ -10,6 +10,34 @@ const property = {
     color: "ff0000",
 }
 
+const loadingManager = new THREE.LoadingManager();
+
+loadingManager.onLoad = () => {
+    console.log("All Texture Is Loaded")
+}
+
+const textureLoader = new THREE.TextureLoader(loadingManager);
+
+const texture = textureLoader.load('https://plus.unsplash.com/premium_vector-1713175694153-2c53d9899744?q=80&w=410&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    () => {
+        console.log('Texture Loaded')
+    }, () => {
+        console.log('Progress')
+    }, () => {
+        console.log('Error')
+    }
+)
+
+texture.minFilter = THREE.LinearFilter
+texture.magFilter = THREE.NearestFilter
+
+
+const rockTextureColor = textureLoader.load('./marble_cliff_01_diff_1k.jpg')
+
+rockTextureColor.colorSpace = THREE.SRGBColorSpace
+
+const matcapTexture = textureLoader.load('./image.png')
+
 const size = {
     width: window.innerWidth,
     height: window.innerHeight
@@ -21,6 +49,11 @@ const scene = new THREE.Scene();
 // const clock = new THREE.Clock()
 
 const timer = new THREE.Timer();
+
+// Lights
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
+scene.add(ambientLight)
 
 // 3d object - mesh
 // geometry
@@ -40,7 +73,7 @@ const geometry = new THREE.BoxGeometry(1, 1, 1);
 // geometry.setAttribute('position',new THREE.BufferAttribute(positionArray,3))
 
 // material 
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+const material = new THREE.MeshStandardMaterial({ color: 0xff0000 });
 
 
 const cube = new THREE.Mesh(geometry, material);
