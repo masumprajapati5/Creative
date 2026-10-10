@@ -2,7 +2,7 @@ import './style.css'
 import * as THREE from "three";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import GUI from 'lil-gui';
-import { color } from 'three/tsl';
+import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 const gui = new GUI();
 
@@ -43,6 +43,38 @@ const size = {
     height: window.innerHeight
 }
 
+let mixer;
+
+const gltfLoader = new GLTFLoader();
+
+gltfLoader.load('./newModel.glb', (gltf) => {
+    const model = gltf.scene
+
+    model.scale.set(0.5,0.5,0.5)
+
+    if (gltf.animations && gltf.animations.length) {
+        console.log("Animations", gltf.animations);
+        mixer = new THREE.AnimationMixer(model);
+
+        const action = mixer.clipAction(gltf.animations[0])
+        // action.play()
+
+        const danceAnimation = THREE.AnimationClip.findByName(gltf.animations, "Dance")
+
+        if (danceAnimation) {
+            const deathAction = mixer.clipAction(danceAnimation)
+            deathAction.play()
+        }
+    }
+
+    console.log(gltf)
+    scene.add(model);
+}, () => {
+    console.log("Model is loading.....")
+}, () => {
+    console.log("Model Error")
+})
+
 // scene
 const scene = new THREE.Scene();
 
@@ -54,6 +86,36 @@ const timer = new THREE.Timer();
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight.position.set(-2, 3, 1)
+scene.add(directionalLight)
+
+const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 0.2)
+scene.add(directionalLightHelper)
+
+// const pointLight = new THREE.PointLight(0x00ff00, 300, 5);
+// pointLight.position.set(1,2,3);
+// scene.add(pointLight)
+
+// const pointLightHelper = new THREE.PointLightHelper(pointLight,1)
+// scene.add(pointLightHelper)
+
+// const spotLight = new THREE.SpotLight('#0000ff', 100, 10, Math.PI * 0.2, 0.3, 2)
+// spotLight.position.set(0, 2, 1)
+// scene.add(spotLight)
+
+// spotLight.target.position.set(0, 0, 0)
+// scene.add(spotLight.target)
+
+// const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+// scene.add(spotLightHelper)
+
+// const hemisphereLight = new THREE.HemisphereLight(0x2222ff, 0x22ff22, 5)
+// scene.add(hemisphereLight)
+
+// const hemisphereLightHelper = new THREE.HemisphereLightHelper(hemisphereLight, 0.3);
+// scene.add(hemisphereLightHelper)
 
 // 3d object - mesh
 // geometry
@@ -101,7 +163,7 @@ rotationFolder.add(cube.rotation, 'x').min(-3).max(3).step(0.01).name('Position 
 rotationFolder.add(cube.rotation, 'y').min(-3).max(3).step(0.01).name('Position Y')
 rotationFolder.add(cube.rotation, 'z').min(-3).max(3).step(0.01).name('Position Z')
 
-scene.add(cube);
+// scene.add(cube);
 
 // camera
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 100);
@@ -137,8 +199,14 @@ window.addEventListener("resize", () => {
 
 function animate() {
     timer.update()
+    // spotLightHelper.update()
     controls.update()
     const delta = timer.getDelta()
+
+    if (mixer) {
+        mixer.update(delta)
+    }
+
     // cube.rotation.x += delta
     // cube.rotation.y += delta
 
