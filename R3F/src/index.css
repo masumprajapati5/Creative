@@ -12,3 +12,8 @@ body {
   height: 100vh;
   width: 100%;
 }
+
+.label {
+  color: white;
+  text-align: center;
+}
