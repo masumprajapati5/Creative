@@ -5,7 +5,7 @@ import { OrbitControls } from '@react-three/drei';
 
 const Three = () => {
     return (
-        <div className='w-full bg-[#ebebeb] h-screen'>
+        <div className='fixed top-0 left-0 z-[60] w-full h-screen'>
             <Canvas>
                 {/* <OrbitControls/> */}
                 <Experience/>
