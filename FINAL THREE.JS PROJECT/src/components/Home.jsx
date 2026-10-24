@@ -1,13 +1,12 @@
-import React from 'react'
 import Three from './Three'
 import Landing from './Landing'
 
 const Home = () => {
   return (
-   <>
-   <Three/>
-   <Landing/>
-   </>
+    <div className="relative w-full h-screen overflow-hidden bg-[#ebebeb]">
+      <Landing />
+      <Three />
+    </div>
   )
 }
 
