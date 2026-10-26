@@ -10,9 +10,14 @@ function App() {
 
   return (
     <>
-      <Canvas>
-        <Dog />
-      </Canvas>
+      <main>
+        <Canvas style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0, backgroundImage: "url('/background-l.png')", backgroundSize: 'cover', backgroundrepeat: 'no-repeat'}}>
+          <Dog />
+        </Canvas>
+        <section id='section-1'></section>
+        <section id='section-2'></section>
+        <section id='section-3'></section>
+      </main>
     </>
   )
 }

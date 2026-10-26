@@ -8,6 +8,14 @@ html,
 body ,
 #root{
   width: 100%;
-  height : 100%;
   background-color: black;
+}
+main{
+  position: relative;
+}
+section{
+  position: relative;
+  min-height: 100vh;
+  border: 2px solid white;
+  z-index: 2;
 }
